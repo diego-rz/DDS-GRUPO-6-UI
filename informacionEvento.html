@@ -117,57 +117,116 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-					<h3>Eventos</h3>
+					<h3>Cumpleaños</h3>
         </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <div class="card">
+          <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-item-center">
+                    <div class="text-primary col mr-2">
+                      <ul class="list-unstyled" style="margin: 0">
+                        <li>Calle Falsa 123</li>
+                        <li>Buenos Aires</li>
+                      </ul>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-city fa-2x"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-item-center">
+                    <div class="text-success col mr-2">
+                      <ul class="list-unstyled" style="margin: 0">
+                        <li>23/11/2019</li>
+                        <li>21:00</li>
+                      </ul>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-item-center">
+                    <div class="text-warning col mr-2">
+                      <ul class="list-unstyled" style="margin: 0">
+                        <li>Soleado</li>
+                        <li>22 °C</li>
+                      </ul>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-sun fa-2x"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <button href="#" class="btn btn-success" onclick="getImage()">
-                <span class="text">Agregar</span>
-            </button>
-            <div class="card">
+          </div>
+
+
+              <h3 style="padding: 1%;">Atuendos</h3>
+              
 							<div class="table-responsive col-sm-12">
-								<table class="table dataTable">
-									<thead>
+                <table class="table dataTable">
+                  <thead>
 										<tr role="row">
-											<th>Nombre</th>
-											<th>Tipo</th>
-											<th>Fecha</th>
+                      <th>Nombre</th>
 											<th> </th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr role="row">
-											<td>Trabajo</td>
-											<td>Periódico</td>
-											<td>Lun-Vie</td>
+                      <td>Atuendo 1</td>
 											<td>
-												<button class="btn btn-primary">
-													<span class="text">Información</span>
-												</button>
-												<button class="btn btn-danger">
-													<span class="text">Eliminar</span>
+                        <button class="btn btn-light">
+													<span class="text">Ver</span>
 												</button>
 											</td>
 										</tr>
 										<tr role="row">
-											<td>Cumpleaños</td>
-											<td>Único</td>
-											<td>23/10/2019</td>
+                      <td>Atuendo 2</td>
 											<td>
-												<a class="btn btn-primary" href="informacionEvento.html">
-													<span class="text">Información</span>
-												</a>
-												<button class="btn btn-danger">
-													<span class="text">Eliminar</span>
+                        <button class="btn btn-light">
+                          <span class="text">Ver</span>
 												</button>
 											</td>
 										</tr>
 									</tbody>
 								</table>
-							</div>
+              </div>
+              
+              <div class="card-body">
+                <h3 style="padding: 1%;">Notificarme via:</h3>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                  <label class="custom-control-label" for="customSwitch1">Mensaje de texto</label>
+                </div>
+                <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                <label class="custom-control-label" for="customSwitch2">Correo electrónico</label>
+              </div>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+                <label class="custom-control-label" for="customSwitch2">Slack</label>
+              </div>
+            </div>
+
 						</div>
 
 
