@@ -9,3 +9,8 @@ function getImage() {
         document.getElementById("imagen-perro").setAttribute("src", responseObject.url);
     };
 }
+
+function toggleNavbar() {
+    console.log("toggle navbar");
+    $('#accordionSidebar').toggleClass('toggled');
+}

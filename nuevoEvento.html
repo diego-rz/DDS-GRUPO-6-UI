@@ -123,7 +123,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" onclick="toggleNavbar()">
               <i class="fa fa-bars"></i>
             </button>
-            <h3>Bienvenido</h3>
+            <h3>Nuevo evento</h3>
           </nav>
           <!-- End of Topbar -->
 
@@ -131,101 +131,72 @@
           <div class="container-fluid">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Inicio</li>
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="eventos.html">Eventos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
               </ol>
             </nav>
 
-            <div class="card" style="padding: 1%">
-              <h4>Acceso rápido</h4>
-              <div class="row">
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card btn border-left-primary shadow h-100 py-2">
-                    <a class="btn" href="nuevoEvento.html">
-                      <div class="card-body">
-                        <div class="row no-gutters align-item-center">
-                          <div class="col text-left mr-2">
-                            Nuevo evento
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-calendar-alt fa-2x"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <h4>Nombre</h4>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="ej. Cumpleaños de Jaime">
+                    <small class="form-text text-muted">Este será el nombre</small>
                   </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card btn border-left-success shadow h-100 py-2">
-                    <a class="btn" href="#">
-                      <div class="card-body">
-                        <div class="row no-gutters align-item-center">
-                          <div class="col text-left mr-2">
-                            Nueva prenda
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-socks fa-2x"></i>
-                          </div>
-                        </div>
+                  <h4>Dirección</h4>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="address">Calle</label>
+                        <input type="text" class="form-control" id="address">
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card btn border-left-warning shadow h-100 py-2">
-                    <a class="btn" href="#">
-                      <div class="card-body">
-                        <div class="row no-gutters align-item-center">
-                          <div class="col text-left mr-2">
-                            Calificar prenda
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-star fa-2x"></i>
-                          </div>
-                        </div>
+                      <div class="col-md-2">
+                        <label for="addressNumber">Número</label>
+                        <input type="text" class="form-control" id="addressNumber">
                       </div>
-                    </a>
+                      <div class="col-md-2">
+                        <label for="addressFloor">Piso</label>
+                        <input type="text" class="form-control" id="addressFloor">
+                      </div>
+                      <div class="col-md-2">
+                        <label for="addressDept">Departamento</label>
+                        <input type="text" class="form-control" id="addressDept">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="addressLocality">Localidad</label>
+                        <input type="text" class="form-control" id="addressLocality">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="addressProvince">Provincia</label>
+                        <input type="text" class="form-control" id="addressProvince">
+                      </div>
+                    </div>
                   </div>
-                </div>
+                  <h4>Notificaciones</h4>
+                  <div class="form-group form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="sms">
+                    <label class="form-check-label" for="sms">Mensaje de texto</label>
+                  </div>
+                  <div class="form-group form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="mail">
+                    <label class="form-check-label" for="mail">Correo electrónico</label>
+                  </div>
+                  <div class="form-group form-check-inline">
+                    <input type="checkbox" class="form-check-input" disabled id="slack">
+                    <label class="form-check-label" for="slack">Slack</label>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                </form>
               </div>
-
-              <h4>Próximos eventos</h4>
-              <div class="card">
-                <div class="table-responsive col-sm-12">
-                  <table class="table dataTable">
-                    <thead>
-                      <tr role="row">
-                        <th>Nombre</th>
-                        <th> </th>
-                        <th> </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr role="row">
-                        <td>Trabajo</td>
-                        <td>Viernes 09:00</td>
-                        <td>
-                          <a class="btn btn-primary" href="informacionEvento.html">
-                            <span class="text">Ver</span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr role="row">
-                        <td>Cine</td>
-                        <td>Viernes 21:00</td>
-                        <td>
-                          <a class="btn btn-primary" href="#">
-                            <span class="text">Ver</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-
-
             </div>
+
+
 
 
           </div>

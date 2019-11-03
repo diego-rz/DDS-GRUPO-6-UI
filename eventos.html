@@ -123,7 +123,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" onclick="toggleNavbar()">
               <i class="fa fa-bars"></i>
             </button>
-            <h3>Bienvenido</h3>
+            <h3>Eventos</h3>
           </nav>
           <!-- End of Topbar -->
 
@@ -131,101 +131,60 @@
           <div class="container-fluid">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Inicio</li>
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Eventos</li>
               </ol>
             </nav>
 
-            <div class="card" style="padding: 1%">
-              <h4>Acceso rápido</h4>
-              <div class="row">
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card btn border-left-primary shadow h-100 py-2">
-                    <a class="btn" href="nuevoEvento.html">
-                      <div class="card-body">
-                        <div class="row no-gutters align-item-center">
-                          <div class="col text-left mr-2">
-                            Nuevo evento
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-calendar-alt fa-2x"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card btn border-left-success shadow h-100 py-2">
-                    <a class="btn" href="#">
-                      <div class="card-body">
-                        <div class="row no-gutters align-item-center">
-                          <div class="col text-left mr-2">
-                            Nueva prenda
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-socks fa-2x"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card btn border-left-warning shadow h-100 py-2">
-                    <a class="btn" href="#">
-                      <div class="card-body">
-                        <div class="row no-gutters align-item-center">
-                          <div class="col text-left mr-2">
-                            Calificar prenda
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-star fa-2x"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
+            <div class="card card-body">
+              <div class="row" style="margin: 0">
+                <a href="nuevoEvento.html" class="btn btn-success">
+                  <span class="text">Agregar</span>
+                </a>
               </div>
-
-              <h4>Próximos eventos</h4>
-              <div class="card">
-                <div class="table-responsive col-sm-12">
-                  <table class="table dataTable">
-                    <thead>
-                      <tr role="row">
-                        <th>Nombre</th>
-                        <th> </th>
-                        <th> </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr role="row">
-                        <td>Trabajo</td>
-                        <td>Viernes 09:00</td>
-                        <td>
-                          <a class="btn btn-primary" href="informacionEvento.html">
-                            <span class="text">Ver</span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr role="row">
-                        <td>Cine</td>
-                        <td>Viernes 21:00</td>
-                        <td>
-                          <a class="btn btn-primary" href="#">
-                            <span class="text">Ver</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              <div class="table-responsive col-sm-12">
+                <table class="table dataTable">
+                  <thead>
+                    <tr role="row">
+                      <th>Nombre</th>
+                      <th>Tipo</th>
+                      <th>Fecha</th>
+                      <th> </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row">
+                      <td>Trabajo</td>
+                      <td>Periódico</td>
+                      <td>Lun-Vie</td>
+                      <td>
+                        <a class="btn btn-primary" href="informacionEvento.html">
+                          <span class="text">Información</span>
+                        </a>
+                        <button class="btn btn-danger">
+                          <span class="text">Eliminar</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr role="row">
+                      <td>Cumpleaños</td>
+                      <td>Único</td>
+                      <td>23/10/2019</td>
+                      <td>
+                        <a class="btn btn-primary" href="#">
+                          <span class="text">Información</span>
+                        </a>
+                        <button class="btn btn-danger">
+                          <span class="text">Eliminar</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-
-
-
             </div>
+
+
 
 
           </div>
