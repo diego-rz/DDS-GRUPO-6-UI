@@ -22,10 +22,11 @@
   <link href="css/sb-admin-2.css" rel="stylesheet"/>
 
   <script src="index.js"></script>
+  <script src="restService.js"></script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="eventMaker()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -152,33 +153,7 @@
                       <th> </th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr role="row">
-                      <td>Trabajo</td>
-                      <td>Periódico</td>
-                      <td>Lun-Vie</td>
-                      <td>
-                        <a class="btn btn-primary" href="informacionEvento.html">
-                          <span class="text">Información</span>
-                        </a>
-                        <button class="btn btn-danger">
-                          <span class="text">Eliminar</span>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr role="row">
-                      <td>Cumpleaños</td>
-                      <td>Único</td>
-                      <td>23/10/2019</td>
-                      <td>
-                        <a class="btn btn-primary" href="#">
-                          <span class="text">Información</span>
-                        </a>
-                        <button class="btn btn-danger">
-                          <span class="text">Eliminar</span>
-                        </button>
-                      </td>
-                    </tr>
+                  <tbody id="eventsList">
                   </tbody>
                 </table>
               </div>

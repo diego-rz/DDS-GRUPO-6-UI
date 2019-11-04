@@ -22,10 +22,11 @@
   <link href="css/sb-admin-2.css" rel="stylesheet"/>
 
   <script src="index.js"></script>
+  <script src="restService.js"></script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="uniqueEventMaker(123)">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -123,7 +124,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" onclick="toggleNavbar()">
               <i class="fa fa-bars"></i>
             </button>
-            <h3>Trabajo</h3>
+            <h3 id="eventName"></h3>
           </nav>
           <!-- End of Topbar -->
 
@@ -144,8 +145,8 @@
                       <div class="row no-gutters align-item-center">
                         <div class="text-primary col mr-2">
                           <ul class="list-unstyled" style="margin: 0">
-                            <li>Calle Falsa 123</li>
-                            <li>Buenos Aires</li>
+                            <li id="eventAddress"></li>
+                            <li id="eventCity"></li>
                           </ul>
                         </div>
                         <div class="col-auto">
@@ -161,8 +162,8 @@
                       <div class="row no-gutters align-item-center">
                         <div class="text-success col mr-2">
                           <ul class="list-unstyled" style="margin: 0">
-                            <li>23/11/2019</li>
-                            <li>21:00</li>
+                            <li id="eventDate"></li>
+                            <li id="eventDateHour"></li>
                           </ul>
                         </div>
                         <div class="col-auto">
@@ -178,8 +179,8 @@
                       <div class="row no-gutters align-item-center">
                         <div class="text-warning col mr-2">
                           <ul class="list-unstyled" style="margin: 0">
-                            <li>Soleado</li>
-                            <li>22 °C</li>
+                            <li id="eventTemp"></li>
+                            <li id="eventTempStatus"></li>
                           </ul>
                         </div>
                         <div class="col-auto">
