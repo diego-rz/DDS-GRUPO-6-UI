@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Que me pongo</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/estilo.css" type="text/css" media="screen" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet"/>
+
+    <script src="index.js"></script>
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-tshirt"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Que me pongo?</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Inicio</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <li class="nav-item active">
+            <a class="nav-link" href="guardarropa.html">
+                <span>Guardarropas</span>
+            </a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="prenda.html">
+                <span>Prendas</span>
+            </a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <span>Eventos</span>
+            </a>
+        </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <span>Calificaciones</span>
+            </a>
+        </li>
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <a class="text-center nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <h3>Prendas</h3>
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <button href="#" class="btn btn-success" onclick="getImage()">
+                    <span class="text">Agregar</span>
+                </button>
+                <div class="card">
+                    <div class="table-responsive col-sm-12">
+                        <table class="table dataTable">
+                            <thead>
+                            <tr role="row">
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Calificar</th>
+                                <th> </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+
+                                <td><img src="img/img1.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Superior</td>
+                                <td>
+                                    <form id="1">
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                              --><label for="radio1">★</label><!--
+                              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                              --><label for="radio2">★</label><!--
+                              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                              --><label for="radio3">★</label><!--
+                              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                              --><label for="radio4">★</label><!--
+                              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                              --><label for="radio5">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Información</span>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+
+                                <td><img src="img/img2.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Superior</td>
+                                <td>
+                                    <form id="1">
+                                        <p class="clasificacion">
+                                            <input id="radio6" type="radio" name="estrellas" value="5"><!--
+                              --><label for="radio6">★</label><!--
+                              --><input id="radio7" type="radio" name="estrellas" value="4"><!--
+                              --><label for="radio7">★</label><!--
+                              --><input id="radio8" type="radio" name="estrellas" value="3"><!--
+                              --><label for="radio8">★</label><!--
+                              --><input id="radio9" type="radio" name="estrellas" value="2"><!--
+                              --><label for="radio9">★</label><!--
+                              --><input id="radio10" type="radio" name="estrellas" value="1"><!--
+                              --><label for="radio10">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Información</span>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fin de registro -->
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+                                <td><img src="img/img3.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Inferior</td>
+                                <td>
+                                    <form id="2">
+                                        <p class="clasificacion">
+                                            <input id="radio11" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio11">★</label><!--
+                                --><input id="radio12" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio12">★</label><!--
+                                --><input id="radio13" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio13">★</label><!--
+                                --><input id="radio14" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio14">★</label><!--
+                                --><input id="radio15" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio15">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary" href="informacionEvento.html">
+                                        <span class="text">Información</span>
+                                    </a>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fin de registro -->
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+                                <td><img src="img/img4.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Inferior</td>
+                                <td>
+                                    <form id="2">
+                                        <p class="clasificacion">
+                                            <input id="radio16" type="radio" name="estrellas" value="5"><!--
+                            --><label for="radio16">★</label><!--
+                            --><input id="radio17" type="radio" name="estrellas" value="4"><!--
+                            --><label for="radio17">★</label><!--
+                            --><input id="radio18" type="radio" name="estrellas" value="3"><!--
+                            --><label for="radio18">★</label><!--
+                            --><input id="radio19" type="radio" name="estrellas" value="2"><!--
+                            --><label for="radio19">★</label><!--
+                            --><input id="radio20" type="radio" name="estrellas" value="1"><!--
+                            --><label for="radio20">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary" href="informacionEvento.html">
+                                        <span class="text">Información</span>
+                                    </a>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fin de registro -->
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+
+                                <td><img src="img/img1.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Superior</td>
+                                <td>
+                                    <form id="1">
+                                        <p class="clasificacion">
+                                            <input id="radio21" type="radio" name="estrellas" value="5"><!--
+                              --><label for="radio21">★</label><!--
+                              --><input id="radio22" type="radio" name="estrellas" value="4"><!--
+                              --><label for="radio22">★</label><!--
+                              --><input id="radio23" type="radio" name="estrellas" value="3"><!--
+                              --><label for="radio23">★</label><!--
+                              --><input id="radio24" type="radio" name="estrellas" value="2"><!--
+                              --><label for="radio24">★</label><!--
+                              --><input id="radio25" type="radio" name="estrellas" value="1"><!--
+                              --><label for="radio25">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Información</span>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+
+                                <td><img src="img/img2.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Superior</td>
+                                <td>
+                                    <form id="1">
+                                        <p class="clasificacion">
+                                            <input id="radio26" type="radio" name="estrellas" value="5"><!--
+                              --><label for="radio26">★</label><!--
+                              --><input id="radio27" type="radio" name="estrellas" value="4"><!--
+                              --><label for="radio27">★</label><!--
+                              --><input id="radio28" type="radio" name="estrellas" value="3"><!--
+                              --><label for="radio28">★</label><!--
+                              --><input id="radio29" type="radio" name="estrellas" value="2"><!--
+                              --><label for="radio29">★</label><!--
+                              --><input id="radio30" type="radio" name="estrellas" value="1"><!--
+                              --><label for="radio30">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Información</span>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fin de registro -->
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+                                <td><img src="img/img3.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Inferior</td>
+                                <td>
+                                    <form id="2">
+                                        <p class="clasificacion">
+                                            <input id="radio31" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio31">★</label><!--
+                                --><input id="radio32" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio32">★</label><!--
+                                --><input id="radio33" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio33">★</label><!--
+                                --><input id="radio34" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio34">★</label><!--
+                                --><input id="radio35" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio35">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary" href="informacionEvento.html">
+                                        <span class="text">Información</span>
+                                    </a>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fin de registro -->
+
+                            <!-- Inicio de registro -->
+                            <tr role="row">
+                                <td><img src="img/img4.jpg" class="avatar" alt="Avatar Image"></td>
+                                <td>Inferior</td>
+                                <td>
+                                    <form id="2">
+                                        <p class="clasificacion">
+                                            <input id="radio36" type="radio" name="estrellas" value="5"><!--
+                            --><label for="radio36">★</label><!--
+                            --><input id="radio37" type="radio" name="estrellas" value="4"><!--
+                            --><label for="radio37">★</label><!--
+                            --><input id="radio38" type="radio" name="estrellas" value="3"><!--
+                            --><label for="radio38">★</label><!--
+                            --><input id="radio39" type="radio" name="estrellas" value="2"><!--
+                            --><label for="radio39">★</label><!--
+                            --><input id="radio40" type="radio" name="estrellas" value="1"><!--
+                            --><label for="radio40">★</label>
+                                        </p>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary" href="informacionEvento.html">
+                                        <span class="text">Información</span>
+                                    </a>
+                                    <button class="btn btn-primary">
+                                        <span class="text">Foto</span>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <span class="text">Eliminar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fin de registro -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Grupo 6 - DDS 2019</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
