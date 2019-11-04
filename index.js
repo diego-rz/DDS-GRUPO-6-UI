@@ -30,6 +30,7 @@ function toggleNavbar() {
 function uniqueEventMaker(){
   let eventData = apiGetEvent(getParam('eventId'));
   document.getElementById('eventName').innerHTML = eventData.nombre;
+  document.getElementById('breadcrumbEventName').innerHTML = eventData.nombre;
   document.getElementById('eventAddress').innerHTML = eventData.direccion;
   document.getElementById('eventCity').innerHTML = eventData.ciudad;
   let date = new Date(eventData.fecha);
@@ -37,6 +38,20 @@ function uniqueEventMaker(){
   document.getElementById('eventDateHour').innerHTML = date.toLocaleTimeString();
   document.getElementById('eventTemp').innerHTML = eventData.clima.temp + "°C";
   document.getElementById('eventTempStatus').innerHTML = eventData.clima.estado;
+
+  eventData.atuendosId.forEach( (item, index) => {
+    let suggestionTemplate = `
+    <tr role="row">
+      <td>Atuendo ${index+1}</td>
+      <td>
+        <a class="btn btn-secondary" href="atuendo.html?suggestionId=${item}&suggestionIndex=${index+1}&eventName=${eventData.nombre}&eventId=${eventData.id}">
+          <span class="text">Ver</span>
+        </a>
+      </td>
+    </tr>
+    `;
+    document.getElementById('suggestionsList').insertAdjacentHTML('beforeend', suggestionTemplate);
+  })
 }
 
 function eventMaker(){
@@ -75,4 +90,10 @@ function eventMaker(){
     `;
     document.getElementById('eventsList').insertAdjacentHTML('beforeend',template);
   });
+}
+
+function suggestionMaker(){
+  document.getElementById('breadcrumbSuggestionEvent').innerHTML = getParam('eventName');
+  document.getElementById('breadcrumbSuggestionEvent').setAttribute('href','informacionEvento.html?eventId='+getParam('eventId'));
+  document.getElementById('breadcrumbSuggestion').innerHTML = 'Sugerencia '+getParam('suggestionIndex');
 }

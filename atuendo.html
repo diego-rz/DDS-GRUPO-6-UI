@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="suggestionMaker()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -124,7 +124,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" onclick="toggleNavbar()">
               <i class="fa fa-bars"></i>
             </button>
-            <h3>Atuendo 1</h3>
+            <h3>Sugerencia de atuendo</h3>
           </nav>
           <!-- End of Topbar -->
 
@@ -134,8 +134,8 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
                 <li class="breadcrumb-item"><a href="eventos.html">Eventos</a></li>
-                <li class="breadcrumb-item"><a href="informacionEvento.html">Trabajo</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Atuendo 1</li>
+                <li class="breadcrumb-item"><a id="breadcrumbSuggestionEvent" href="informacionEvento.html"></a></li>
+                <li id="breadcrumbSuggestion" class="breadcrumb-item active" aria-current="page"></li>
               </ol>
             </nav>
             <div class="row">

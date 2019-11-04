@@ -134,7 +134,7 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
                 <li class="breadcrumb-item"><a href="eventos.html">Eventos</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Trabajo</li>
+                <li id="breadcrumbEventName" class="breadcrumb-item active" aria-current="page"></li>
               </ol>
             </nav>
             <div class="card card-body">
@@ -194,7 +194,7 @@
               </div>
 
 
-              <h3 style="padding: 1%;">Atuendos</h3>
+              <h3 style="padding: 1%;">Sugerencias de atuendos</h3>
 
               <div class="table-responsive col-sm-12">
                 <table class="table dataTable">
@@ -204,23 +204,7 @@
                       <th> </th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr role="row">
-                      <td>Atuendo 1</td>
-                      <td>
-                        <a class="btn btn-secondary" href="atuendo.html">
-                          <span class="text">Ver</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr role="row">
-                      <td>Atuendo 2</td>
-                      <td>
-                        <a class="btn btn-secondary" href="#">
-                          <span class="text">Ver</span>
-                        </a>
-                      </td>
-                    </tr>
+                  <tbody id="suggestionsList">
                   </tbody>
                 </table>
               </div>
