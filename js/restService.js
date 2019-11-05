@@ -55,7 +55,7 @@ function apiGetEvent(id) {
 
 }
 
-function apiGetEvents(){
+function apiGetEvents() {
   return eventsList;
 }
 
