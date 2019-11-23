@@ -24,5 +24,6 @@ function getImage() {
 
 function toggleNavbar() {
   console.log("toggle navbar");
-  $('#accordionSidebar').toggleClass('toggled');
+  $('#sidebar-menu').toggleClass('d-none');
+  $('#sidebar-menu').toggleClass('d-block');
 }
