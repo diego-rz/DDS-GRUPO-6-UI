@@ -30,6 +30,7 @@ function toggleNavbar() {
 function uniqueEventMaker(){
   let eventData = apiGetEvent(getParam('eventId'));
   document.getElementById('eventName').innerHTML = eventData.nombre;
+  document.getElementById('breadcrumbTag').innerHTML = eventData.nombre;
   document.getElementById('eventAddress').innerHTML = eventData.direccion;
   document.getElementById('eventCity').innerHTML = eventData.ciudad;
   let date = new Date(eventData.fecha);
