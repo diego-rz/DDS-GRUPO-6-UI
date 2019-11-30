@@ -34,8 +34,8 @@ function eventMaker(){
     <!-- Fila evento-->
     <tr role="row">
       <td>${item.nombre}</td>
-      <td>${item.tipo}</td>
-      <td>${new Date(item.fecha).toLocaleDateString()}</td>
+      <td class="d-none d-sm-table-cell">${item.tipo}</td>
+      <td class="d-none d-sm-table-cell">${new Date(item.fecha).toLocaleDateString()}</td>
       <td>
         <a class="btn btn-primary" href="informacionEvento.html?eventId=${item.id}">
           <span class="text">Información</span>
