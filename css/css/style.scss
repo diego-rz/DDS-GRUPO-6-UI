@@ -92,7 +92,7 @@ img {
 			font-family: "Poppins-Medium";
 		}
 		&:after {
-			content: "/ 3";
+			content: "/ 2";
 			font-size: 15px;
 			color: #ccc;
 			font-family: "Poppins-Medium";
@@ -101,7 +101,7 @@ img {
 			top: 13px;
 			width: 22px;
 		}
-		&.step-2 {
+		&.step-3 {
 			&:before {
 				content: "2";
 			}
@@ -109,14 +109,14 @@ img {
 				left:31px;
 			}
 		}
-		&.step-3 {
-			&:before {
-				content: "3";
-			}
-			&:after {
-				left:31px;
-			}
-		}
+				/*	&.step-3 {
+						&:before {
+								content: "2";
+						}
+							&:after {
+								left:31px;
+								}
+									} */
 	}
 }
 h3 {
