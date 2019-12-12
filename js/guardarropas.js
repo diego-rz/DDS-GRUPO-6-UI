@@ -46,7 +46,10 @@ function newGuardarropaMaker() {
   }
 }
 
-let nuevo = getParam('nuevoNombre');
-if(nuevo){
-  apiAddGuardarropa(getParam('token'), nuevo);
+function newGuardarropa() {
+  let nuevo = getParam('nuevoNombre');
+  if(nuevo){
+    apiAddGuardarropa(getParam('token'), nuevo);
+  }
+  window.location.href = "guardarropa.html?token="+getParam('token');
 }
