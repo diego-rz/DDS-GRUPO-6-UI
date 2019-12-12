@@ -1,5 +1,6 @@
 
 function uniqueEventMaker(){
+  replaceLinks();
   let eventData = apiGetEvent(getParam('eventId'));
   document.getElementById('eventName').innerHTML = eventData.nombre;
   document.getElementById('breadcrumbEventName').innerHTML = eventData.nombre;
@@ -16,7 +17,7 @@ function uniqueEventMaker(){
     <tr role="row">
       <td>Atuendo ${index+1}</td>
       <td>
-        <a class="btn btn-secondary" href="atuendo.html?suggestionId=${item}&suggestionIndex=${index+1}&eventName=${eventData.nombre}&eventId=${eventData.id}">
+        <a class="btn btn-secondary" href="atuendo.html?suggestionId=${item}&suggestionIndex=${index+1}&eventName=${eventData.nombre}&eventId=${eventData.id}&token=${getParam("token")}">
           <span class="text">Ver</span>
         </a>
       </td>
@@ -27,6 +28,7 @@ function uniqueEventMaker(){
 }
 
 function eventMaker(){
+  replaceLinks();
   let eventsData = apiGetEvents();
   eventsData.forEach( item => {
     let template =
@@ -37,7 +39,7 @@ function eventMaker(){
       <td class="d-none d-sm-table-cell">${item.tipo}</td>
       <td class="d-none d-sm-table-cell">${new Date(item.fecha).toLocaleDateString()}</td>
       <td>
-        <a class="btn btn-primary" href="informacionEvento.html?eventId=${item.id}">
+        <a class="btn btn-primary" href="informacionEvento.html?eventId=${item.id}&token=${getParam("token")}">
           <span class="text">Información</span>
         </a>
         <button class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarEvento${item.id}">
@@ -65,7 +67,8 @@ function eventMaker(){
 }
 
 function suggestionMaker(){
+  replaceLinks();
   document.getElementById('breadcrumbSuggestionEvent').innerHTML = getParam('eventName');
-  document.getElementById('breadcrumbSuggestionEvent').setAttribute('href','informacionEvento.html?eventId='+getParam('eventId'));
+  document.getElementById('breadcrumbSuggestionEvent').setAttribute('href','informacionEvento.html?eventId='+getParam('eventId')+getParam("token"));
   document.getElementById('breadcrumbSuggestion').innerHTML = 'Sugerencia '+getParam('suggestionIndex');
 }

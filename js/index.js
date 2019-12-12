@@ -7,7 +7,11 @@ let params = location.search.substring(1).split('&').map(i => {
   };
 });
 function getParam(paramName){
-  return params.find(i => i.key==paramName).value;
+  let param = params.find(i => i.key==paramName);
+  if (param) {
+    return param.value;
+  }
+  return null;
 }
 
 function getImage() {
@@ -26,4 +30,28 @@ function toggleNavbar() {
   console.log("toggle navbar");
   $('#sidebar-menu').toggleClass('d-none');
   $('#sidebar-menu').toggleClass('d-block');
+}
+
+var replaceLinks = function() {
+  let elements = document.getElementsByTagName("a");
+  for (let i = 0; i < elements.length; i++) {
+    if(elements[i].href !== window.location.href){
+      elements[i].href = elements[i].href+"?token="+getParam('token')
+    }
+  }
+};
+
+window.onload = replaceLinks;
+
+let token = getParam('token');
+let username = getParam('username');
+let password = getParam('password');
+if(username && password) {
+  console.log("username");
+  apiLogin(username, password);
+} else if (!token) {
+  console.log("sin token");
+  window.location.href = "login.html"
+} else {
+  console.log("document");
 }
