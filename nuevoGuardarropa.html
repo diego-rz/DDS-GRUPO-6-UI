@@ -25,11 +25,11 @@
 
   <script src="js/restService.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/eventos.js"></script>
+  <script src="js/guardarropas.js"></script>
 
 </head>
 
-<body id="page-top" onload="eventMaker()">
+<body id="page-top" onload="newGuardarropaMaker()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -127,7 +127,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" onclick="toggleNavbar()">
               <i class="fa fa-bars"></i>
             </button>
-            <h3>Eventos</h3>
+            <h3>Nuevo guardarropa</h3>
           </nav>
           <!-- End of Topbar -->
 
@@ -136,49 +136,26 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Eventos</li>
+                <li class="breadcrumb-item"><a href="guardarropa.html">Guardarropas</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
               </ol>
             </nav>
 
-            <!-- Vista de calendario -->
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
-            <script src="js/calendar.js"></script>
-            <link rel="stylesheet" href="css/calendar.css">
-            <script>
-            	$(document).ready(function(e){
-                setCalendar();
-            	});
-            </script>
-            <div class="my-3" style="max-width: 800px">
-              <div id="calendar"></div>
-            </div>
-
-            <div class="card card-body">
-              <div class="row" style="margin: 0">
-                <a href="nuevoEvento.html" class="btn btn-success">
-                  <span class="text">Agregar</span>
-                </a>
-              </div>
-              <div class="table-responsive col-sm-12">
-                <table class="table dataTable">
-                  <thead>
-                    <tr role="row">
-                      <th>Nombre</th>
-                      <th class="d-none d-sm-table-cell">Tipo</th>
-                      <th class="d-none d-sm-table-cell">Fecha</th>
-                      <th> </th>
-                    </tr>
-                  </thead>
-                  <tbody id="eventsList">
-                  </tbody>
-                </table>
+            <div class="card">
+              <div class="card-body">
+                <form action="guardarropa.html">
+                  <h4>Nombre</h4>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="nuevoNombre" placeholder="ej. Formal">
+                    <small class="form-text text-muted">Este será el nombre</small>
+                    <input id="tokenInput" type="hidden" name="token">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                </form>
               </div>
             </div>
-
-
-
 
           </div>
           <!-- /.container-fluid -->
@@ -236,7 +213,6 @@
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
-
 
   </body>
 

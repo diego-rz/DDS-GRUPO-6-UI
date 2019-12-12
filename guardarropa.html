@@ -24,10 +24,11 @@
 
   <script src="js/index.js"></script>
   <script src="js/restService.js"></script>
+  <script src="js/guardarropas.js"></script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="guardarropasMaker()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -140,7 +141,7 @@
 
             <div class="card card-body">
               <div class="row" style="margin: 0">
-                <a href="#" class="btn btn-success disabled" href="#">
+                <a href="nuevoGuardarropa.html" class="btn btn-success">
                   <span class="text">Agregar</span>
                 </a>
               </div>
@@ -149,28 +150,47 @@
                   <thead>
                     <tr role="row">
                       <th>Nombre</th>
-                      <th class="d-none d-sm-table-cell">Tipo</th>
-                      <th class="d-none d-sm-table-cell">Fecha</th>
+                      <th class="d-none d-sm-table-cell">Propietario</th>
                       <th> </th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr role="row">
-                      <td>Guardarropas nº 1</td>
-                      <td class="d-none d-sm-table-cell">Compartido</td>
-                      <td class="d-none d-sm-table-cell">Lun-Vie</td>
-                      <td>
-                        <button class="btn btn-primary">
+                  <tbody id="guardarropasList">
+                  
+
+
+<!--
+
+  <tr role="row">
+    <td>Guardarropas nº 1</td>
+    <td class="d-none d-sm-table-cell">Compartido</td>
+    <td class="d-none d-sm-table-cell">Lun-Vie</td>
+    <td>
+      <button class="btn btn-primary">
                           <span class="text">Información</span>
                         </button>
                         <a href="prenda.html" class="text"><button class="btn btn-primary">
                           <span class="text" >Prendas</span>
                         </button></a>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarGuardarropa1">
                           <span class="text">Eliminar</span>
                         </button>
                       </td>
+                      <div class="modal animated--grow-in" id="modalEliminarGuardarropa1" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <h5>¿Eliminar evento?</h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-danger" onclick="apiDeleteEvent(1)">Eliminar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </tr>
+                    
+                    
                     <tr role="row">
                       <td>Guardarropas nº 2</td>
                       <td class="d-none d-sm-table-cell">Compartido</td>
@@ -187,6 +207,7 @@
                         </button>
                       </td>
                     </tr>
+                  -->
                   </tbody>
                 </table>
               </div>

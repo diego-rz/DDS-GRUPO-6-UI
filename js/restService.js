@@ -1,54 +1,3 @@
- let eventsList = [
-  {
-    id: 1,
-    nombre: "Cumpleaños",
-    tipo: "Único",
-    ciudad: "Buenos Aires",
-    direccion: "Calle falsa 123",
-    fecha: 1572821995000,
-    clima: {
-      temp: 22,
-      estado: "Soleado"
-    } ,
-    atuendoId: 23,
-    atuendosId: [
-      45, 23, 66
-    ]
-  },
-  {
-    id: 2,
-    nombre: "Casamiento",
-    tipo: "Único",
-    ciudad: "Springfield",
-    direccion: "Evergreen 742",
-    fecha: 1572825721000,
-    clima: {
-      temp: 10,
-      estado: "Lluvioso"
-    } ,
-    atuendoId: 23,
-    atuendosId: [
-      45, 23, 66
-    ]
-  },
-  {
-    id: 3,
-    nombre: "Partido",
-    tipo: "Único",
-    ciudad: "Buenos Aires",
-    direccion: "Calle 4 234",
-    fecha: 1572827395000,
-    clima: {
-      temp: 10,
-      estado: "Soleado"
-    } ,
-    atuendoId: 23,
-    atuendosId: [
-      45, 23, 66
-    ]
-  }
-];
-
 const host = 'https://dds-2019-db.herokuapp.com/';
 // const host = 'http://localhost:5000/';
 
@@ -87,19 +36,51 @@ function apiLogin(username, password) {
   }
 }
 
+// GUARDARROPAS
 function apiGetGuardarropas(token) {
   return httpRequest('GET', "guardarropas", token, null, null);
 }
-
-function apiGetEvent(id) {
-  return eventsList.find( i => i.id == id);
+function apiAddGuardarropa(token, guardarropa) {
+  httpRequest('POST', "guardarropas", token, null, guardarropa);
 }
-
-function apiGetEvents() {
-  return eventsList;
-}
-
-function apiDeleteEvent(eventId) {
+function apiDeleteGuardarropa(token, guardarropaId) {
+  httpRequest('DELETE', "guardarropas/"+guardarropaId, token, null, null);
   location.reload();
-  console.log('Se elimina el evento ' + eventId);
 }
+
+// EVENTOS
+function apiGetEvents(token) {
+  return httpRequest('GET', "eventos", token, null, null);
+}
+function apiAddEvent(token, event) {
+  return httpRequest('POST', "eventos", token, null, event);
+}
+function apiGetEvent(token, eventId) {
+  return httpRequest('GET', "eventos/"+eventId, token, null, null);
+}
+function apiModEvent(token, eventFull) {
+  return httpRequest('PUT', "eventos/"+eventFull.id, token, null, eventFull);
+}
+function apiDeleteEvent(token, eventId) {
+  httpRequest('DELETE', "eventos/"+eventId, token, null, null);
+  location.reload();
+}
+function apiSetAtuendo(token, eventId, atuendo) {
+  return httpRequest('POST', "eventos/"+eventId+"/atuendos", token, null, atuendo);
+}
+
+//PRENDAS
+function apiGetPrendas(token) {
+  return httpRequest('GET', "prendas", token, null, null);
+}
+function apiAddPrenda(token, prenda) {
+  return httpRequest('POST', "prendas", token, null, prenda);
+}
+function apiModPrenda(token, prenda) {
+  return httpRequest('PUT', "prendas/"+prenda.id, token, null, prenda);
+}
+function apiDeletePrenda(token, prendaId) {
+  httpRequest('DELETE', "prendas/"+prendaId, token, null, null);
+  location.reload();
+}
+

@@ -29,7 +29,12 @@ function uniqueEventMaker(){
 
 function eventMaker(){
   replaceLinks();
-  let eventsData = apiGetEvents();
+  let eventsData = apiGetEvents(getParam('token'));
+  if(!eventsData){
+    setCalendar([]);
+    return;
+  }
+  setCalendar(eventsData.map(item => item.fecha.substring(8,10)));
   eventsData.forEach( item => {
     let template =
     `
@@ -56,7 +61,7 @@ function eventMaker(){
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger" onclick="apiDeleteEvent(${item.id})">Eliminar</button>
+            <button type="button" class="btn btn-danger" onclick="apiDeleteEvent(${getParam('token')},${item.id})">Eliminar</button>
           </div>
         </div>
       </div>
@@ -71,4 +76,10 @@ function suggestionMaker(){
   document.getElementById('breadcrumbSuggestionEvent').innerHTML = getParam('eventName');
   document.getElementById('breadcrumbSuggestionEvent').setAttribute('href','informacionEvento.html?eventId='+getParam('eventId')+getParam("token"));
   document.getElementById('breadcrumbSuggestion').innerHTML = 'Sugerencia '+getParam('suggestionIndex');
+}
+
+function setCalendar(diasEventos){
+  calendar = new CalendarYvv("#calendar");
+  calendar.diasResal = diasEventos;
+  calendar.createCalendar();
 }
