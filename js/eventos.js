@@ -78,8 +78,28 @@ function suggestionMaker(){
   document.getElementById('breadcrumbSuggestion').innerHTML = 'Sugerencia '+getParam('suggestionIndex');
 }
 
+function newEventMaker() {
+  replaceLinks();
+  let tokenInput = document.getElementById("tokenInput");
+  if(tokenInput){
+    tokenInput.setAttribute('value', getParam('token'));
+  }}
+
 function setCalendar(diasEventos){
   calendar = new CalendarYvv("#calendar");
   calendar.diasResal = diasEventos;
   calendar.createCalendar();
+}
+
+function newEvent() {
+  let event = {
+    id: 0,
+    nombre: getParam("name"),
+    tipo: getParam("type"),
+    ciudad: getParam("addressLocality"),
+    direccion: getParam("address"+"addressNumber"+"addressFloor"+"addressDept"+"addressLocality"+"addressProvince"),
+    fecha: getParam("date")
+  }
+  apiAddEvent(getParam('token'), event);
+  window.location.href = "eventos.html?token="+getParam('token');
 }

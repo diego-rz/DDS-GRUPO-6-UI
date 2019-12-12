@@ -29,7 +29,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="newEventMaker()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -143,65 +143,71 @@
 
             <div class="card">
               <div class="card-body">
-                <form>
-                  <h4>Nombre</h4>
+                <form action="nuevoEventoFin.html">
+                  <h4>Información</h4>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="ej. Cumpleaños de Jaime">
+                    Nombre
+                    <input type="text" class="form-control" name="name" placeholder="ej. Cumpleaños de Jaime">
                     <small class="form-text text-muted">Este será el nombre</small>
+                    Tipo
+                    <select class="form-control" name="type">
+                      <option value="eventosimple">Único</option>
+                      <option value="eventoperiodico">Periódico</option>
+                    </select>
+                    Fecha
+                    <input type="datetime" class="form-control" name="date">
                   </div>
                   <h4>Dirección</h4>
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-6">
                         <label for="address">Calle</label>
-                        <input type="text" class="form-control" id="address">
+                        <input type="text" class="form-control" name="address">
                       </div>
                       <div class="col-md-2">
                         <label for="addressNumber">Número</label>
-                        <input type="text" class="form-control" id="addressNumber">
+                        <input type="text" class="form-control" name="addressNumber">
                       </div>
                       <div class="col-md-2">
                         <label for="addressFloor">Piso</label>
-                        <input type="text" class="form-control" id="addressFloor">
+                        <input type="text" class="form-control" name="addressFloor">
                       </div>
                       <div class="col-md-2">
                         <label for="addressDept">Departamento</label>
-                        <input type="text" class="form-control" id="addressDept">
+                        <input type="text" class="form-control" name="addressDept">
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <label for="addressLocality">Localidad</label>
-                        <input type="text" class="form-control" id="addressLocality">
+                        <input type="text" class="form-control" name="addressLocality">
                       </div>
                       <div class="col-md-6">
                         <label for="addressProvince">Provincia</label>
-                        <input type="text" class="form-control" id="addressProvince">
+                        <input type="text" class="form-control" name="addressProvince">
                       </div>
                     </div>
                   </div>
                   <h4>Notificaciones</h4>
                   <div class="form-group form-check-inline">
-                    <input type="checkbox" class="form-check-input" id="sms">
+                    <input type="checkbox" class="form-check-input" name="sms">
                     <label class="form-check-label" for="sms">Mensaje de texto</label>
                   </div>
                   <div class="form-group form-check-inline">
-                    <input type="checkbox" class="form-check-input" id="mail">
+                    <input type="checkbox" class="form-check-input" name="mail">
                     <label class="form-check-label" for="mail">Correo electrónico</label>
                   </div>
                   <div class="form-group form-check-inline">
-                    <input type="checkbox" class="form-check-input" disabled id="slack">
+                    <input type="checkbox" class="form-check-input" disabled name="slack">
                     <label class="form-check-label" for="slack">Slack</label>
                   </div>
+                  <input type="hidden" name="token" id="tokenInput">
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                   </div>
                 </form>
               </div>
             </div>
-
-
-
 
           </div>
           <!-- /.container-fluid -->
